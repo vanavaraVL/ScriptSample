@@ -1,0 +1,8 @@
+﻿<rule name="BrowserSuportRuleSafari" stopProcessing="true">
+  <match url=".*" />
+  <conditions>
+    <add input="{HTTP_USER_AGENT}" pattern="^.*safari.*" />
+    <add input="{HTTP_USER_AGENT}" pattern="^.*chromium|edg|ucbrowser|chrome|crios|opr|opera|fxios|firefox.*" negate="true" />
+  </conditions>
+  <action type="CustomResponse" statusCode="447" statusReason="Safari doesn't support" statusDescription="We support only Chrome" />
+</rule>
